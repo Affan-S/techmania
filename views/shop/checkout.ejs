@@ -1,0 +1,142 @@
+<%- include ../partials/header %> <%- include ../partials/categories-navbar %>
+<div class="container mt-4 mb-5">
+  <!-- Flash messages -->
+  <div class="row mt-3 mb-3">
+    <div class="col-md-8 m-auto">
+      <% if (errorMsg) { %>
+      <div id="error" class="alert alert-danger">
+        <%= errorMsg %>
+      </div>
+      <% } else { %>
+      <div id="error" class="alert alert-danger d-none"></div>
+      <% } %>
+    </div>
+  </div>
+  <div class="col-md-8 m-auto">
+    <!-- Checkout form -->
+    <form action="/checkout" method="POST" id="checkout-form">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="recieverName">Reciever Name</label>
+            <input type="text" id="recieverName" name="recieverName" class="form-control" required />
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              class="form-control"
+              required
+              name="address"
+            />
+          </div>
+        </div>
+       
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="telnum">Contact Number (03xxXxxxxxx)</label>
+            <input type="text"  id="telnum" name="telnum" class="form-control" maxlength="11" minlength="11" required />
+          </div>
+        </div>
+  
+        <div class="col-md-12">
+
+            <label style="font-size: large; font-size:25px">Payment Options</label>
+            <br>
+            <input type="button" id="cod" name="paymentMethod" value="Cash On Delivery" class="active inactive"
+            style=" margin: .4rem;  font-size: 21px; height:45px; width:250px; color:blue; font-family: sans-serif; display:inline-block; box-sizing:border-box; transition:all 0.2s; border:0.16em solid; text-align:center;padding: 5px 10px" 
+            onclick="cardOff(); setColorCOD();">
+            <br>
+            <div style="margin-left: 30px; border:soft;">
+              <label id="showCOD" style="display: none; font-size:26px">Pay with cash upon delivery</label>
+            </div>
+            <br>
+            <!-- <input type="button" id="card" name="paymentMethod" value="Pay with credit card" class="active inactive "
+            style="margin:.4rem; font-size: 21px; height:45px; width:250px; color:blue; font-family: sans-serif; display:inline-block; box-sizing:border-box; transition:all 0.2s; border:0.16em solid; text-align:center;padding: 5px 10px"
+            onclick="cardOn(); setColorCard();"/> -->
+
+            <input type="text" id="payMethod" name="payMethod" style="display: none;">
+            
+        </div>  
+        
+        <script type="text/javascript">
+
+          $("document").ready(function () {
+            $("#cod").trigger("click");
+          });
+         
+          function setColorCOD(){
+            var x = document.getElementById("cod");
+            if(x.style.color === "blue"){
+              x.style.color = "green";
+            }else if(x.style.color === "green"){
+              x.style.color = "blue";
+            }
+           
+          }
+
+          function cardOff() {
+            var x = document.getElementById("cardPayment");
+            x.style.display = "none";
+            var y = document.getElementById("showCOD");
+            y.style.display = "block";
+            $('#payMethod').val("COD");            
+          }
+
+          function cardOn(){
+            var x = document.getElementById("cardPayment");
+            x.style.display = "block";
+            var y = document.getElementById("showCOD");
+            y.style.display = "none";
+            $('#payMethod').val("card");
+
+            addNewChild("https://js.stripe.com/v3/");
+            addNewChild("javascripts/checkout.js");
+          }
+
+          function addNewChild(url){
+            var headID = document.getElementsByTagName("head")[0];
+            var newScript = document.createElement('script');
+            newScript.type = 'text/javascript';
+            newScript.src = url;
+            headID.appendChild(newScript);
+          }
+          
+        </script>
+
+        <div id="cardPayment" class="col-md-12" style="display: none;">
+          
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="card-name">Card Holder Name</label>
+              <input type="text" id="card-name" name="card-name" class="form-control"/>
+            </div>
+          </div>
+
+          <div class="cardDiv col-md-12" >
+            <label for="card-element">Enter your Card Information</label>
+            <div id="card-element" class="StripeElement"></div>
+            <div id="card-errors" role="alert" class="text-danger mb-3"></div>
+          </div>
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        </div>
+        
+      </div>
+      <button id="submit-btn" type="submit" class="btn btn-dark button-style btn-lg"
+        style="width:250px; font-size:23px;"
+      >
+        Buy now
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+<script type="text/javascript" src="javascripts/checkout.js"></script> -->
+
+
+<%- include ../partials/footer %>
