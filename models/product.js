@@ -33,6 +33,17 @@ const productSchema = Schema({
   available: {
     type: Boolean,
     required: true,
+    default: true
+  },
+  gadget: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
+  flashDeal : {
+    type: Boolean,
+    required: true,
+    default: false
   },
   createdAt: {
     type: Date,

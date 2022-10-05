@@ -473,6 +473,22 @@ footer {
   height: 2.5rem;
 }
 
+/* advertise image */
+
+.advertise-img {
+  margin-top: 6px;
+  width: 280px;
+  height: 472px;
+}
+
+/* table for bank info */
+.atm_table {
+  text-align: center; 
+  margin-bottom: 50px;
+  padding: 5px;
+}
+
+
 /* STRIPE ELEMENTS FOR CARD PAYMENT */
 .StripeElement {
   box-sizing: border-box;
@@ -502,6 +518,7 @@ footer {
   background-color: #fefde5 !important;
 }
 
+
 /* MEDIA QUERY */
 /* XS SCREENS */
 @media only screen and (max-width: 576px) {
@@ -516,6 +533,12 @@ footer {
   }
   .hero-text h1 {
     font-size: 25px;
+  }
+  .advertise-img {
+    margin-top: 6px;
+    width: 348px;
+    height: 472px;
+    margin-left: 20px;
   }
 }
 
@@ -538,6 +561,14 @@ footer {
   .hero-text {
     padding-top: 8%;
   }
+
+  .advertise-img {
+    margin-top: 6px;
+    width: 349px;
+    height: 472px;
+    margin-left: 50px;
+  }
+
 }
 
 /* MD SCREENS */
@@ -549,4 +580,6 @@ footer {
     width: 150px;
     height: 150px;
   }
+
 }
+

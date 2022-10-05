@@ -127,7 +127,8 @@ router.get("/:slug/:id",async (req, res) => {
 });
 
 // POST: add a review to a product by its ID
-router.post("/:slug/:id", middleware.isLoggedIn, async (req, res) => {
+router.get("/:slug/:id", async (req, res) => {
+
   try {
     const product = await Product.findById(req.params.id).populate("category");
     const review = {

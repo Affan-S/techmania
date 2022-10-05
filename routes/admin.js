@@ -15,8 +15,8 @@ const adminBro = new AdminBro({
   databases: [mongoose],
   rootPath: "/admin",
   branding: {
-    companyName: "BetterYou",
-    logo: "/images/shop-icon.jpg",
+    companyName: "Techmania",
+    logo: "/images/shop-icon.png",
     softwareBrothers: false,
   },
   resources: [
@@ -57,7 +57,7 @@ const adminBro = new AdminBro({
       options: {
         parent: {
           name: "User Content",
-          icon: "User",
+          icon: "user",
         },
         properties: {
           _id: {

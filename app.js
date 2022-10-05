@@ -11,6 +11,7 @@ const flash = require("connect-flash");
 const Category = require("./models/category");
 var MongoStore = require("connect-mongo")(session);
 const connectDB = require("./config/db");
+var favicon = require('serve-favicon');
 
 const app = express();
 require("./config/passport");
@@ -23,6 +24,7 @@ app.set("view engine", "ejs");
 
 // admin route
 const adminRouter = require("./routes/admin");
+app.use(favicon(path.join(__dirname, 'public', '/images/favicon.ico')));
 app.use("/admin", adminRouter);
 
 app.use(logger("dev"));

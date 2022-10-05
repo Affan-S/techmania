@@ -9,6 +9,11 @@ const categorySchema = Schema({
     type: String,
     required: true,
   },
+  popular:{
+    type: Boolean,
+    required: true,
+    default: false
+  },
   slug: {
     type: String,
     unique: true,

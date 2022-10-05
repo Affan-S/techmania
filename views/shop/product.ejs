@@ -55,7 +55,7 @@
             <p class="is-available text-center">In stock</p>
             <a href="/add-to-cart/<%=product._id%>?addMethod=addToCart"
               class="btn btn-block btn-secondary mt-3 mb-3 button-style">
-              Add to Shopping Cart
+              Add to Cart
             </a>
             <a href="/add-to-cart/<%=product._id%>?addMethod=buyNow"
               class="btn btn-block btn-secondary mt-3 mb-3 button-style">
@@ -87,7 +87,8 @@
         </div>
 
         <div class="col-md-5">
-            <h2>Leave a Review?</h2>
+          <h2>Leave a Review?</h2>
+          <form action="" method="GET">
             <h3>
               <textarea placeholder="Name" rows="1" cols="50" name="Name" id="name" required></textarea><br>
               <textarea placeholder="Comment" rows="4" cols="50" name="Comment" id="comment" required></textarea> <br>
@@ -99,9 +100,10 @@
                 <option value="5">5</option>
               </select> <br>
             </h3>
-            <a id="submit-btn" href="/<%=product.category.slug%>/<%=product._id%>" title="Reviews are disabled temporarily" class="btn btn-dark button-style">
+            <button id="submit-btn" disabled title="Reviews are disabled temporarily" class="btn btn-dark button-style">
               Post My Review
-            </a>
+            </button>
+          </form>
         </div>
 
 

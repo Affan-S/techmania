@@ -17,12 +17,15 @@ router.use(csrfProtection);
 
 // GET: home page
 router.get("/", async (req, res) => {
-  console.log("here");
   try {
     const products = await Product.find({})
       .sort("-createdAt")
       .populate("category");
-    res.render("shop/home", { pageName: "Home", products });
+    const categories = await Category.find({popular : {$eq : true}});
+    
+    const flashDealProducts = products.filter(product => product.flashDeal == true);
+
+    res.render("shop/home", { pageName: "Home", products, categories,flashDealProducts });
   } catch (error) {
     console.log(error);
     res.redirect("/");
@@ -248,6 +251,7 @@ router.post("/checkout", async (req, res) => {
     const order = new Order({
       user: req.user,
       recieverName: req.body.recieverName,
+      cityName: req.body.city,
       cart: {
         totalQty: cart.totalQty,
         totalCost: cart.totalCost,
@@ -257,6 +261,7 @@ router.post("/checkout", async (req, res) => {
       contact: req.body.telnum,
       paymentMethod: req.body.payMethod,
     });
+    console.log(order);
     order.save(async (err, newOrder) => {
       if (err) {
         console.log(err);

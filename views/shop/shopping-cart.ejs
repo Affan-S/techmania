@@ -11,7 +11,7 @@
             <th>&nbsp;</th>
             <th>Quantity</th>
             <th>&nbsp;</th>
-            <th>Total</th>
+            <th>Unit Price</th>
             <th>Subtotal</th>
             <th>&nbsp;</th>
           </tr>
@@ -52,8 +52,8 @@
                 ><i class="fa fa-minus-square" aria-hidden="true"></i
               ></a>
             </td>
-            <td>RS:<%= product.price %></td>
-            <td>RS:<%= product.totalPrice %></td>
+            <td>RS: <%= product.price %> /- </td>
+            <td>RS: <%= product.totalPrice %> /- </td>
             <td>
               <a
                 href="/removeAll/<%=product._id%>"
@@ -70,7 +70,7 @@
 <hr>
   <div class="row mt-4 mr-auto">
     <div class="col-md-11 col-sm-12 m-auto">
-      <strong>Total: RS <%= cart.totalCost %> </strong>
+      <strong>Total: RS <%= cart.totalCost %> /- </strong>
     </div>
   </div>
   <div class="row mt-2">

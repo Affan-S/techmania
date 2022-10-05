@@ -11,6 +11,10 @@ const orderSchema = Schema({
     type: String,
     required: true
   },
+  cityName: {
+    type: String,
+    required: true
+  },
   cart: {
     totalQty: {
       type: Number,

@@ -25,24 +25,10 @@
           <h6><i>Contact us by email:</i></h6>
         </p>
         <p>
-          For general inquiries:
+          For any inquiries:
           <a href="mailto:general@email.com">
             <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>general@email.com</u>
-          </a>
-        </p>
-        <p>
-          For orders problems:
-          <a href="mailto:orders@email.com">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>orders@email.com</u>
-          </a>
-        </p>
-        <p>
-          For technical support:
-          <a href="mailto:support@email.com">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
-            <u>support@email.com</u>
+            <u>techpkmania@gmail.com</u>
           </a>
         </p>
       </div>
@@ -52,21 +38,14 @@
           <h6><i>Contact us by phone:</i></h6>
         </p>
         <p>
-          Call center phone 1:
+          For Calls:
           <a href="tel:555-555-5555">
             <i class="fa fa-phone" aria-hidden="true"></i>
             555-555-5555
            </a>
         </p>
         <p>
-          Call center phone 2:
-          <a href="tel:555-555-5555">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-            555-555-5555
-           </a>
-        </p>
-        <p>
-          Whatsapp phone:
+          For WhatsApp:
           <a href="tel:555-555-5555">
             <i class="fa fa-phone" aria-hidden="true"></i>
             555-555-5555
@@ -78,7 +57,7 @@
     <!-- Contact us form -->
     <div class="col-lg-8 col-md-12 m-auto">
       <div class="mt-5 mb-4">
-        <h2>Contact Us Form</h2>
+        <h2>Contact Us</h2>
         <!-- Error flash message -->
         <% if(errorMsg!=null && errorMsg.length>0) {%>
           <div id="flash-msg" class="alert alert-danger">
@@ -103,7 +82,8 @@
             <textarea class="form-control" name="message" id="message" rows="5" placeholder="Please write your message here..." required></textarea>
           </div>
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-          <button type="submit" class="btn btn-primary button-style">
+          <p>Contact us form is currently disabled. Please use contact numbers provided above.</p>
+          <button disabled title="Contact us form is currently disabled. Please use contact numbers provided above." type="submit" class="btn btn-primary button-style">
             Submit
           </button>
         </form>
