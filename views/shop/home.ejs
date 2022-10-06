@@ -48,8 +48,8 @@
 <div class="container mb-4 mt-4">
   <!--Carousel Wrapper-->
   <div class="row">
-    <div class="col-md-3">
-      <h3 style="margin-left:20px;">Latest Products</h3>
+    <div class="col-md-12 col-12 col-xl-3 img">
+      <h3>Latest Products</h3>
       <img
           src="https://images.unsplash.com/photo-1522273400909-fd1a8f77637e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8YXBwbGVhaXJwb2RzfHx8fHx8MTYyOTEzMDMzNQ&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80/?appleairpods"
           alt="Bag"
@@ -64,9 +64,9 @@
         <!--Controls-->
         <div class="controls-top mb-2">
           <div class="row">
-            <div class="col-8">
+            <div class="col-xl-9 col-8 col-md-8">
             </div>
-            <div class="col-4">
+            <div class="col-4 col-md-4 col-xl-3">
               <div class="controls float-right hidden-xs">
                 <a
                   class="left fa fa-chevron-left btn btn"
@@ -91,7 +91,7 @@
             <div class="row">
               
               <% for(let i=0; i<4; i++) { %>
-              <div class="col-md-3 product-index-box">
+              <div class="col-xl-3 col-md-3 col-sm-6 col-6  product-index-box">
                 <div class="single-product d-flex flex-column h-100">
                   <a
                     class="title-link"
@@ -145,7 +145,7 @@
             <div class="row">
               
               <% for(let i=4; i<8; i++) { %>
-              <div class="col-md-3 product-index-box">
+              <div class="col-xl-3 col-md-3 col-sm-6 col-6 product-index-box">
                 <div class="single-product d-flex flex-column h-80">
                   <a
                     class="title-link"
@@ -194,7 +194,7 @@
             <div class="row">
               
               <% for(let i=8; i<12; i++) { %>
-              <div class="col-md-3 product-index-box">
+              <div class="col-xl-3 col-md-3 col-sm-6 col-6 product-index-box">
                 <div class="single-product d-flex flex-column h-100">
                   <a
                     class="title-link"
@@ -255,28 +255,25 @@
         data-ride="carousel" >
   
         <div class="controls-top mb-2">
-          <div class="row">
-            <div class="col-8">
-              <h3>Most Popular</h3>
+          <div class="col-8 col-md-12">
+            <h3>Most Popular</h3>
+          </div>
+          <div class="col-md-12 col-10 col-sm-12">
+            <div class="card-group">
+              <% for(let i=0; i<5; i++) { %>
+                <div class="card">
+                  <img src="/images/categories/banner-<%= categories[i].slug %>.jpg" height="100px" class="card-img-top" alt="<%= categories[i].title %>">
+                  <div class="card-img-overlay">
+                    <h5 class="card-title"><%= categories[i].title %></h5>
+                  </div>
+                </div>
+              <%}%>
             </div>
           </div>
         </div>
+      
       </div>
-      <!--Slides-->
-      <div class="" role="listbox">
-        <div class="active">
-          <div class="card-group">
-            <% for(let i=0; i<5; i++) { %>
-              <div class="card">
-                <img src="/images/categories/banner-<%= categories[i].slug %>.jpg" height="100px" class="card-img-top" alt="<%= categories[i].title %>">
-                <div class="card-img-overlay">
-                  <h5 class="card-title"><%= categories[i].title %></h5>
-                </div>
-              </div>
-            <%}%>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
   <!-- End Popular Categories -->
@@ -284,7 +281,7 @@
   <br>
   <!-- Start Flash Deals -->
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-12">
       <% if(flashDealProducts.length != 0) { %>
       <h3>Flash Deals</h3>
       <img
@@ -326,7 +323,7 @@
           <div class="carousel-item active">
             <div class="row">
               <% for(let i=0; i<4; i++) { %>
-              <div class="col-md-3 product-index-box">
+              <div class="col-md-3 col-sm-6 col-6 product-index-box">
                 <div class="single-product d-flex flex-column h-100">
                   <a
                     class="title-link"
@@ -379,7 +376,7 @@
           <div class="carousel-item">
             <div class="row">
               <% for(let i=4; i<8; i++) { %>
-              <div class="col-md-3 product-index-box">
+              <div class="col-md-3 col-sm-6 col-6 product-index-box">
                 <div class="single-product d-flex flex-column h-80">
                   <a
                     class="title-link"

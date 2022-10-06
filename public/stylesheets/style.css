@@ -534,16 +534,17 @@ footer {
   .hero-text h1 {
     font-size: 25px;
   }
-  .advertise-img {
-    margin-top: 6px;
-    width: 348px;
-    height: 472px;
-    margin-left: 20px;
+  .img {
+    width: 100%;
+  }
+
+  .footerimg{
+    display: none;
   }
 }
 
 /* SM SCREENS */
-@media only screen and (max-width: 768px) {
+@media only screen and (min-wdth:578px)  and (max-width: 768px) {
   .right-nav {
     justify-content: center;
   }
@@ -562,13 +563,12 @@ footer {
     padding-top: 8%;
   }
 
-  .advertise-img {
-    margin-top: 6px;
-    width: 349px;
-    height: 472px;
-    margin-left: 50px;
+  .img {
+    display: none;
   }
-
+  .footerimg{
+    display: none;
+  }
 }
 
 /* MD SCREENS */
@@ -579,6 +579,10 @@ footer {
   .circle-img {
     width: 150px;
     height: 150px;
+  }
+
+  .img {
+    display: none;
   }
 
 }
