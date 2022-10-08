@@ -48,7 +48,6 @@
 <div class="container mb-4 mt-4">
   <!--Carousel Wrapper-->
   <div class="row">
-
     <div class="col-md-12 col-12 col-xl-3">
       <h3>Latest Products</h3>
       <img
@@ -56,7 +55,6 @@
           alt="Bag"
           class="advertise-img" />
     </div>
-
 
     <div
       id="products-carousel"
@@ -102,8 +100,8 @@
                     >
                     <img
                       src="<%= products[i].imagePath %>"
-                      alt="Bag"
-                      class="img-fluid" />
+                      alt="<%= products[i].title %>"
+                      class="home-page-product" />
                   </a>
                   <div class="product-info">
                     <a
@@ -157,7 +155,7 @@
                     <img
                       src="<%= products[i].imagePath %>"
                       alt="Bag"
-                      class="img-fluid"
+                      class="home-page-product"
                   /></a>
                   <div class="product-info">
                     <a
@@ -206,7 +204,7 @@
                     <img
                       src="<%= products[i].imagePath %>"
                       alt="Bag"
-                      class="img-fluid"
+                      class="home-page-product"
                   /></a>
                   <div class="product-info">
                     <a
@@ -261,7 +259,7 @@
           <div class="col-8 col-md-12">
             <h3>Most Popular</h3>
           </div>
-          <div class="col-md-12  col-sm-12">
+          <div class="col-md-12 col-sm-12">
             <div class="card-group">
               <% for(let i=0; i<5; i++) { %>
                 <div class="card">
