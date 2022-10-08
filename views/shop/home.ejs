@@ -48,23 +48,25 @@
 <div class="container mb-4 mt-4">
   <!--Carousel Wrapper-->
   <div class="row">
-    <div class="col-md-12 col-12 col-xl-3 img">
+
+    <div class="col-md-12 col-12 col-xl-3">
       <h3>Latest Products</h3>
       <img
-          src="https://images.unsplash.com/photo-1522273400909-fd1a8f77637e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8YXBwbGVhaXJwb2RzfHx8fHx8MTYyOTEzMDMzNQ&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80/?appleairpods"
+          src="https://images.unsplash.com/photo-1522273400909-fd1a8f77637e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8YXBwbGVhaXJwb2RzfHx8fHx8MTYyOTEzMDMzNQ&ixlib=rb-1.2.1&auto=format&fit=crop/?appleairpods"
           alt="Bag"
           class="advertise-img" />
     </div>
 
+
     <div
       id="products-carousel"
-      class="carousel slide col-md-9 carousel-multi-item"
+      class="carousel slide col-xl-9 carousel-multi-item"
       data-ride="carousel"
       >
         <!--Controls-->
         <div class="controls-top mb-2">
           <div class="row">
-            <div class="col-xl-9 col-8 col-md-8">
+            <div class="col-xl-9 col-8">
             </div>
             <div class="col-4 col-md-4 col-xl-3">
               <div class="controls float-right hidden-xs">
@@ -88,10 +90,11 @@
         <div class="carousel-inner" role="listbox">
           <!--First slide-->
           <div class="carousel-item active">
+            
             <div class="row">
               
               <% for(let i=0; i<4; i++) { %>
-              <div class="col-xl-3 col-md-3 col-sm-6 col-6  product-index-box">
+              <div class="col-xl-3 col-md-4 col-sm-6 col-6  product-index-box">
                 <div class="single-product d-flex flex-column h-100">
                   <a
                     class="title-link"
@@ -145,7 +148,7 @@
             <div class="row">
               
               <% for(let i=4; i<8; i++) { %>
-              <div class="col-xl-3 col-md-3 col-sm-6 col-6 product-index-box">
+              <div class="col-xl-3 col-md-4 col-sm-6 col-6 product-index-box">
                 <div class="single-product d-flex flex-column h-80">
                   <a
                     class="title-link"
@@ -194,7 +197,7 @@
             <div class="row">
               
               <% for(let i=8; i<12; i++) { %>
-              <div class="col-xl-3 col-md-3 col-sm-6 col-6 product-index-box">
+              <div class="col-xl-3 col-md-4 col-sm-6 col-6 product-index-box">
                 <div class="single-product d-flex flex-column h-100">
                   <a
                     class="title-link"
@@ -251,14 +254,14 @@
     <div class="container mb-4 mt-4">
       <div
         id=""
-        class="carousel slide carousel-multi-item"
+        class="carousel-slide col-12 carousel-multi-item"
         data-ride="carousel" >
   
         <div class="controls-top mb-2">
           <div class="col-8 col-md-12">
             <h3>Most Popular</h3>
           </div>
-          <div class="col-md-12 col-10 col-sm-12">
+          <div class="col-md-12  col-sm-12">
             <div class="card-group">
               <% for(let i=0; i<5; i++) { %>
                 <div class="card">
@@ -285,13 +288,13 @@
       <% if(flashDealProducts.length != 0) { %>
       <h3>Flash Deals</h3>
       <img
-          src="https://images.unsplash.com/photo-1522273400909-fd1a8f77637e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8YXBwbGVhaXJwb2RzfHx8fHx8MTYyOTEzMDMzNQ&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80/?appleairpods"
+          src="https://images.unsplash.com/photo-1522273400909-fd1a8f77637e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8YXBwbGVhaXJwb2RzfHx8fHx8MTYyOTEzMDMzNQ&ixlib=rb-1.2.1&auto=format&fit=crop&/?appleairpods"
           alt="Bag"
           class="advertise-img" />
     </div>
     <div
       id="flash-deal-carousel"
-      class="carousel slide col-md-9 carousel-multi-item"
+      class="carousel slide col-xl-9 carousel-multi-item"
       data-ride="carousel"
       >
         <!--Controls-->
@@ -419,8 +422,6 @@
             </div>
           </div>
           <!--/.Second slide-->
-          
-          <!--/.Third slide-->
         </div>
         <!--/.Slides-->
       </div>

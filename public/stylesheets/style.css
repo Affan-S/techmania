@@ -477,7 +477,7 @@ footer {
 
 .advertise-img {
   margin-top: 6px;
-  width: 280px;
+  /* width: 280px; */
   height: 472px;
 }
 
@@ -534,8 +534,8 @@ footer {
   .hero-text h1 {
     font-size: 25px;
   }
-  .img {
-    width: 100%;
+  .advertise-img {
+    width: 365px;
   }
 
   .footerimg{
@@ -563,12 +563,14 @@ footer {
     padding-top: 8%;
   }
 
-  .img {
-    display: none;
-  }
   .footerimg{
     display: none;
   }
+  
+  .advertise-img {
+    width: 850px;
+  }
+
 }
 
 /* MD SCREENS */
@@ -581,9 +583,18 @@ footer {
     height: 150px;
   }
 
-  .img {
-    display: none;
+  .advertise-img {
+    width: 850px;
   }
 
 }
 
+@media screen and (min-width: 992px) {
+  
+  .advertise-img {
+    width: 250px;
+    object-fit: cover;
+    height: 472px;
+  }
+
+}
