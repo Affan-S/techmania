@@ -248,7 +248,7 @@ hr.gradient-style {
 
 .product-index-box img {
   width: 90%;
-  height: 14em;
+  height: 20em;
   object-fit: cover;
   border: 1px solid #c2c2c2;
   border-radius: 5px;
@@ -547,6 +547,10 @@ footer {
 
   .footerimg{
     display: none;
+  }
+
+  .product-index-box img {
+    height: 14rem;
   }
 }
 
